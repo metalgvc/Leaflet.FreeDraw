@@ -267,8 +267,8 @@ export default class FreeDraw extends FeatureGroup {
                 map[cancelKey] = () => {};
 
                 // Stop listening to the events.
-                map.off('mouseup', mouseUp);
-                map.off('mousemove', mouseMove);
+                map.off('mouseup touchend', mouseUp);
+                map.off('mousemove touchmove', mouseMove);
                 'body' in document && document.body.removeEventListener('mouseleave', mouseUp);
 
                 // Clear the SVG canvas.
